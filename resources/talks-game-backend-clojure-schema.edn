@@ -1,0 +1,12 @@
+{:objects
+ {:token
+  {:description "User token generated on server"
+   :fields
+   {:token {:type String}}}
+  }
+ :queries
+ {:auth {:type :token
+         :description "Get token from user's password"
+         :args {:password {:type String}}
+         :resolve :query/try-auth}}
+ }
