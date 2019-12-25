@@ -1,0 +1,6 @@
+[
+ {:team-number 1 :team-type "supplier" :login "supplier1" :password "$argon2i$v=19$m=65536,t=10,p=1$oqNVkvb6yPPzFEPiC8MsJQ$tYbdOoDWT/NIffnhB6isk1GsFUKAkUKzTczfMhiG1bA"}
+ {:team-number 2 :team-type "supplier" :login "supplier2" :password "$argon2i$v=19$m=65536,t=10,p=1$wt2IG6dWb3lpDdoZV6lD6w$0xa45YpW+Mc7VmesrBAduns/L86jnc+vupBHUImIgUM"}
+ {:team-number 1 :team-type "consumer" :login "consumer1" :password "$argon2i$v=19$m=65536,t=10,p=1$4t/y8PJcBNu063UC5tEIcg$H6tpxXI3+nIFxcZ5z/kQahxFbzdT8VxVWwTiLmdjcE4"}
+ {:team-number 2 :team-type "consumer" :login "consumer2" :password "$argon2i$v=19$m=65536,t=10,p=1$5Y68/GY191Oeefm2lx+j6g$wiJ3ulyIXCVX/oc7nfqAqT+lND6eGJ3DwMBTmbH2zOQ"}
+ ]

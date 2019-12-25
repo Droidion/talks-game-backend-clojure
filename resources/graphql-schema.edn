@@ -1,0 +1,19 @@
+{
+ :objects
+ {:session
+  {:description "User token generated on server"
+   :fields
+                {:token       {:type String}
+                 :team_number {:type Int}
+                 :team_type   {:type String}
+                 :controller  {:type Boolean}}}
+  }
+
+ :queries
+ {:auth
+  {:type        :session
+   :description "Get token from user's password"
+   :args        {:login {:type String}
+                 :password {:type String}}
+   :resolve     :query/try-auth}}
+ }

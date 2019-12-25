@@ -12,6 +12,7 @@
                  [org.slf4j/jcl-over-slf4j "1.7.26"]
                  [org.slf4j/log4j-over-slf4j "1.7.26"]
                  [com.walmartlabs/lacinia-pedestal "0.12.0"]
+                 [de.mkammerer/argon2-jvm "2.6"]
                  ]
   :min-lein-version "2.0.0"
   :resource-paths ["config", "resources"]
