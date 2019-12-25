@@ -10,4 +10,3 @@
   [& args]
   (server/start))
 
-(-main)
