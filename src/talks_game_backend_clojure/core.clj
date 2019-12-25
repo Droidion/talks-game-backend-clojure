@@ -13,7 +13,7 @@
 (defonce runnable-service (http/create-server service))
 
 (defn -main
-  "I don't do a whole lot ... yet."
+  "Web server"
   [& args]
   (println "Starting server...")
   (http/start runnable-service))

@@ -4,12 +4,16 @@
     [clojure.java.io :as io]
     [com.walmartlabs.lacinia.util :as util]
     [com.walmartlabs.lacinia.schema :as schema]
-    [clojure.edn :as edn]))
+    [clojure.edn :as edn])
+  (:import (java.util UUID)))
+
+(defn resolve-auth
+  [context args value]
+  {:token (.toString (UUID/randomUUID))})
 
 (defn resolver-map
   []
-  {:query/try-auth (fn [context args value]
-                       nil)})
+  {:query/try-auth resolve-auth})
 
 (defn load-schema
   []
