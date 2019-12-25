@@ -1,23 +1,13 @@
 (ns talks-game-backend-clojure.core
+  "App entry point"
   (:gen-class)
   (:require
-    [io.pedestal.http :as http]
-    [com.walmartlabs.lacinia.pedestal :as lacinia]
-    [talks-game-backend-clojure.schema :as s])
+    [talks-game-backend-clojure.server :as server])
   )
 
-(def schema (s/load-schema))
-
-(def service (lacinia/service-map schema {:graphiql true}))
-
-(defonce runnable-service (http/create-server service))
-
-
-
 (defn -main
-  "Web server"
+  "Start the app"
   [& args]
-  (println "Starting server...")
-  (http/start runnable-service))
+  (server/start))
 
 (-main)
