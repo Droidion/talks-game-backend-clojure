@@ -13,7 +13,10 @@
                  [org.slf4j/log4j-over-slf4j "1.7.26"]
                  [com.walmartlabs/lacinia-pedestal "0.12.0"]
                  [de.mkammerer/argon2-jvm "2.6"]
+                 [com.taoensso/carmine "2.19.1"]
+                 [yogthos/config "1.1.7"]
                  ]
+  :jvm-opts ["-Dconfig=dev-config.edn"]
   :min-lein-version "2.0.0"
   :resource-paths ["config", "resources"]
   :main ^:skip-aot talks-game-backend-clojure.core

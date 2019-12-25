@@ -9,4 +9,3 @@
   "Start the app"
   [& args]
   (server/start))
-

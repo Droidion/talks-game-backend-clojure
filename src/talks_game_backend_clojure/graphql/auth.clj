@@ -7,10 +7,12 @@
 (defn auth-response-ok
   "Send ok response with generated session token"
   [{:keys [team-number team-type]}]
-  (resolve/resolve-as {:token       (crypto/uuid-random-string)
-                       :team_number team-number
-                       :team_type   team-type
-                       :controller  false}))
+  (let [session {:token       (crypto/uuid-random-string)
+                 :team_number team-number
+                 :team_type   team-type
+                 :controller  false}]
+    (profiles/add-session-to-redis session)
+    (resolve/resolve-as session)))
 
 (defn auth-response-wrong-password
   "Send wrong password error with basic profile metadata"

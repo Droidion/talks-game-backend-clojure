@@ -4,7 +4,12 @@ Experimental implementation of Talks Game. Backend part, using Clojure and Graph
 
 ## Installation
 
-Have JVM and Clojure (Leiningen) installed. Tested with JVM 13.
+Have JVM, Clojure (Leiningen) and Redis  installed. Tested with JVM 13.
+
+Create `config/config.edn` file with env variable for setting Redis uri, e.g. for localhost
+```
+{:redis "redis://127.0.0.1:6379"}
+```
 
 ## Usage
 
