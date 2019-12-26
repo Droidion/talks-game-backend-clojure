@@ -5,7 +5,10 @@
     [taoensso.carmine :as car :refer (wcar)]))
 
 (def redis-url
-  (env :redis))
+  (if-let [url (env :redis)]
+    url
+    ((throw (Exception. "Could not load REDIS environment variable."))
+     (System/exit 0))))
 
 (def server1-conn {:pool {} :spec {:uri redis-url}})
 (defmacro wcar* [& body] `(car/wcar server1-conn ~@body))
