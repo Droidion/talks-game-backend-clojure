@@ -1,11 +1,10 @@
 (ns talks-game-backend-clojure.graphql
   "Control point for working with GraphQL using Lacinia"
   (:require
-    [clojure.java.io :as io]
     [com.walmartlabs.lacinia.util :as util]
     [com.walmartlabs.lacinia.schema :as schema]
-    [clojure.edn :as edn]
-    [talks-game-backend-clojure.graphql.auth :as graphql-auth]))
+    [talks-game-backend-clojure.graphql.auth :as graphql-auth]
+    [talks-game-backend-clojure.utils :as utils]))
 
 (defn resolver-map
   "Map GraphQL models resolvers to Clojure functions"
@@ -15,8 +14,7 @@
 (defn load-schema
   "Load GraphQL schema from edn file"
   []
-  (-> (io/resource "graphql-schema.edn")
-      slurp
-      edn/read-string
+  (-> "graphql-schema"
+      utils/load-edn
       (util/attach-resolvers (resolver-map))
       schema/compile))

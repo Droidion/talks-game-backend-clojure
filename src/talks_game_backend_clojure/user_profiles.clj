@@ -4,14 +4,13 @@
     [clojure.java.io :as io]
     [clojure.edn :as edn]
     [talks-game-backend-clojure.redis :as redis]
+    [talks-game-backend-clojure.utils :as utils]
     [taoensso.carmine :as car :refer (wcar)]))
 
 (defn load-profiles
   "Load profiles from edn file"
   []
-  (-> (io/resource "profiles.edn")
-      slurp
-      edn/read-string))
+  (utils/load-edn "profiles"))
 
 (def profiles (atom (load-profiles)))
 
